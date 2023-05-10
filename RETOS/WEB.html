@@ -40,7 +40,7 @@
 
     </section>
 
-    
+
   </main>
 
 
@@ -93,7 +93,7 @@ document.getElementById("peliculas-list").appendChild(li);
 let title = document.createElement("p");
 title.textContent = peliculas[i].title;
 
- let releaseYear = document.createElement("p");
+let releaseYear = document.createElement("p");
 releaseYear.textContent = "Año de lanzamiento: " + peliculas[i].releaseYear;
 
 let actors = document.createElement("p");
@@ -248,13 +248,13 @@ for (let i = 0; i < profesionales.length; i++) {
 document.querySelector("form").addEventListener("submit", function(event) {
   event.preventDefault(); 
 
-  const title = document.querySelector("#title").value;
-  const releaseYear = document.querySelector("#releaseYear").value;
-  const nacionality = document.querySelector("#nacionality").value;
-  const genre = document.querySelector("#genre").value;
-  const photo = document.querySelector("#photo").value;
+  let title = document.querySelector("#title").value;
+  let releaseYear = document.querySelector("#releaseYear").value;
+  let nacionality = document.querySelector("#nacionality").value;
+  let genre = document.querySelector("#genre").value;
+  let photo = document.querySelector("#photo").value;
 
-  const newMovie = {
+  let newMovie = {
     title: title,
     releaseYear: releaseYear,
     nacionality: nacionality,
@@ -264,24 +264,24 @@ document.querySelector("form").addEventListener("submit", function(event) {
 
   peliculas.push(newMovie);
 
-  const newLi = document.createElement("li");
-  const newTitle = document.createElement("p");
+  let newLi = document.createElement("li");
+  let newTitle = document.createElement("p");
   newTitle.textContent = newMovie.title;
   newLi.appendChild(newTitle);
 
-  const newReleaseYear = document.createElement("p");
+  let newReleaseYear = document.createElement("p");
   newReleaseYear.textContent = "Año de lanzamiento: "+ newMovie.releaseYear;
   newLi.appendChild(newReleaseYear);
 
-  const newNationality = document.createElement("p");
+  let newNationality = document.createElement("p");
   newNationality.textContent = "Nacionalidad: " + newMovie.nacionality;
   newLi.appendChild(newNationality);
 
-  const newGenre = document.createElement("p");
+  let newGenre = document.createElement("p");
   newGenre.textContent = "Género: " + newMovie.genre;
   newLi.appendChild(newGenre);
 
-  const newPhoto = document.createElement("img");
+  let newPhoto = document.createElement("img");
   newPhoto.src = newMovie.photo;
   newLi.appendChild(newPhoto);
 
