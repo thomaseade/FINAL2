@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="WEB.css">
+    <script src="MovieJS.js"></script>
+    <script src="ProfessionalJS.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+
+   
+  <header>
+    <h1>IMDB</h1>
+   
+  </header>
+
+
+  <main>
+
+    <section>
+      <a href="#peliculas" id="peliculas-link">
+          <h3>Películas</h3>
+      </a>
+      <ul id="peliculas-list" style="display:none;">
+         
+      </ul>
+    </section>
+
+    <section>
+     
+      <a href="#profesionales" id="profesionales-link">
+        
+        <h3>Profesionales</h3>
+      </a>
+      <ul id="profesionales-list" style="display:none;"></ul>
+
+    </section>
+
+    
+  </main>
+
+
+  <div class="add-movie-form">
+    <h3>Añadir nueva película</h3>
+    <form>
+      <label for="title">Título:</label>
+      <input type="text" id="title" name="title" required>
+      <br>
+      <label for="releaseYear">Año de lanzamiento:</label>
+      <input type="number" id="releaseYear" name="releaseYear" min="1900" max="2099" required>
+      <br>
+      <label for="nacionality">Nacionalidad:</label>
+      <input type="text" id="nacionality" name="nacionality" required>
+      <br>
+      <label for="genre">Género:</label>
+      <input type="text" id="genre" name="genre" required>
+      <br>
+      <label for="photo">URL de la foto:</label>
+      <input type="url" id="photo" name="photo" required>
+      <br>
+      <button type="submit" id="add-movie-btn">Agregar película</button>
+    </form>
+  </div>
+      
+
+
+  <footer>
+    <p> IMDB</p>
+  </footer>
+      
+    
+
+
+
+
+
+
+<script>
+
+
+for(let i=0; i<peliculas.length; i++) {
+
+let li = document.createElement("li");
+         
+document.getElementById("peliculas-list").appendChild(li);
+
+
+         
+let title = document.createElement("p");
+title.textContent = peliculas[i].title;
+
+ let releaseYear = document.createElement("p");
+releaseYear.textContent = "Año de lanzamiento: " + peliculas[i].releaseYear;
+
+let actors = document.createElement("p");
+actors.textContent = peliculas[i].actors;
+
+let nacionality = document.createElement("p");
+nacionality.textContent ="Nacionalidad: " + peliculas[i].nacionality;
+
+let director = document.createElement("p");
+director.textContent = peliculas[i].director;
+
+let writer = document.createElement("p");
+writer.textContent = peliculas[i].writer;
+
+let language = document.createElement("p");
+language.textContent = peliculas[i].language;
+
+let plataforma = document.createElement("p");
+plataforma.textContent = peliculas[i].plataforma;
+
+let isMCU = document.createElement("p");
+isMCU.textContent = peliculas[i].isMCU;
+         
+let mainCharacterName = document.createElement("p");
+mainCharacterName.textContent = peliculas[i].mainCharacterName;
+         
+let producer = document.createElement("p");
+producer.textContent = peliculas[i].producer;
+         
+let distributor = document.createElement("p");
+distributor.textContent = peliculas[i].distributor;
+         
+let genre = document.createElement("p");
+genre.textContent ="Género: " + peliculas[i].genre;
+         
+let photo = document.createElement("img");
+photo.src = peliculas[i].photo;
+
+
+         
+
+ 
+li.appendChild(title);
+li.appendChild(releaseYear);
+li.appendChild(actors);
+li.appendChild(nacionality);
+li.appendChild(director);
+li.appendChild(writer);
+li.appendChild(language);
+li.appendChild(plataforma);
+li.appendChild(language);
+li.appendChild(isMCU);
+li.appendChild(mainCharacterName);
+li.appendChild(producer);
+li.appendChild(distributor);
+li.appendChild(genre);
+li.appendChild(photo);
+
+
+document.getElementById("peliculas-list").appendChild(li);
+      }
+    
+</script>
+
+<script>
+ document.getElementById("peliculas-link").addEventListener("click", function() {
+  
+  document.getElementById("peliculas-list").style.display = "block";
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+for (let i = 0; i < profesionales.length; i++) {
+
+  let li = document.createElement("li");
+
+
+  document.getElementById("profesionales-list").appendChild(li);
+
+
+  let name = document.createElement("p");
+  name.textContent = profesionales[i].name;
+
+  let age = document.createElement("p");
+  age.textContent ="Edad: "+ profesionales[i].age;
+
+  let weight = document.createElement("p");
+  weight.textContent ="Peso: " +profesionales[i].weight;
+
+  let height = document.createElement("p");
+  height.textContent ="Altura: " +profesionales[i].height;
+
+  let isRetired = document.createElement("p");
+  isRetired.textContent ="¿Esta retirado?: " +profesionales[i].isRetired;
+
+  let nationality = document.createElement("p");
+  nationality.textContent = "Nacionalidad: " + profesionales[i].nationality;
+
+  let oscarsNumber = document.createElement("p");
+  oscarsNumber.textContent ="Oscars ganados: " + profesionales[i].oscarsNumber;
+
+  let profession = document.createElement("p");
+  profession.textContent = "Profesion: "+profesionales[i].profession;
+
+
+  let photo = document.createElement("img");
+  photo.src = profesionales[i].photo;
+  
+
+  
+  li.appendChild(name);
+  li.appendChild(age);
+  li.appendChild(weight);
+  li.appendChild(height);
+  li.appendChild(isRetired);
+  li.appendChild(nationality);
+  li.appendChild(oscarsNumber);
+  li.appendChild(profession);
+  li.appendChild(photo);
+}
+
+</script>
+
+
+<script>
+    document.getElementById("profesionales-link").addEventListener("click", function() {
+
+        document.getElementById("profesionales-list").style.display = "block";
+    });
+</script>
+
+    
+
+
+
+
+
+
+<script>
+
+document.querySelector("form").addEventListener("submit", function(event) {
+  event.preventDefault(); 
+
+  const title = document.querySelector("#title").value;
+  const releaseYear = document.querySelector("#releaseYear").value;
+  const nacionality = document.querySelector("#nacionality").value;
+  const genre = document.querySelector("#genre").value;
+  const photo = document.querySelector("#photo").value;
+
+  const newMovie = {
+    title: title,
+    releaseYear: releaseYear,
+    nacionality: nacionality,
+    genre: genre,
+    photo: photo
+  };
+
+  peliculas.push(newMovie);
+
+  const newLi = document.createElement("li");
+  const newTitle = document.createElement("p");
+  newTitle.textContent = newMovie.title;
+  newLi.appendChild(newTitle);
+
+  const newReleaseYear = document.createElement("p");
+  newReleaseYear.textContent = "Año de lanzamiento: "+ newMovie.releaseYear;
+  newLi.appendChild(newReleaseYear);
+
+  const newNationality = document.createElement("p");
+  newNationality.textContent = "Nacionalidad: " + newMovie.nacionality;
+  newLi.appendChild(newNationality);
+
+  const newGenre = document.createElement("p");
+  newGenre.textContent = "Género: " + newMovie.genre;
+  newLi.appendChild(newGenre);
+
+  const newPhoto = document.createElement("img");
+  newPhoto.src = newMovie.photo;
+  newLi.appendChild(newPhoto);
+
+
+  
+  document.querySelector("#peliculas-list").appendChild(newLi);
+
+  document.querySelector("form").reset(); 
+
+});
+
+
+
+</script>
+
+</body>
+</html>
